@@ -10,17 +10,19 @@ $handle = fopen('dict.txt', 'r');
 $resTrie = trie_filter_new();
 
 while(! feof($handle)) {
-    $item = trim(fgets($handle));
+	    $item = trim(fgets($handle));
 
-    if (empty($item)) {
-        continue;
-    }
+		    if (empty($item)) {
+				        continue;
+						    }
 
-    // 把敏感词逐个加入trie-tree
-    trie_filter_store($resTrie, $item);
+							    // 把敏感词逐个加入trie-tree
+								    trie_filter_store($resTrie, $item);
 }
 
 // 生成trie-tree文件
 $blackword_tree = 'blackword.tree';
 
 trie_filter_save($resTrie, $blackword_tree);
+
+?>

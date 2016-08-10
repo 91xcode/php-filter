@@ -76,3 +76,4 @@ class FilterHelper
         return $result;
     }
 }
+?>
